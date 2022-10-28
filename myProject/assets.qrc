@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>img/mh.png</file>
+        <file>hero-background-15.jpg</file>
+    </qresource>
+</RCC>

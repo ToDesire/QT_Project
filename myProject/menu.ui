@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>menu</class>
+ <widget class="QDialog" name="menu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>507</width>
+    <height>456</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MENU</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog{
+	background-image: url(:/img/hero-background-15.jpg);
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>135</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="1">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>1</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>1</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="2">
+    <spacer name="horizontalSpacer_2">
+     <property name="styleSheet">
+      <string>QPushButton{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(202, 202, 202);
+	color: white;
+}QPushButton:pressed{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: material;
+}</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>134</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	color: rgb(185, 185, 185);
+	font: 81 italic 14pt &quot;Fira Sans Condensed ExtraBold&quot;;
+}</string>
+       </property>
+       <property name="text">
+        <string>&lt;center&gt;MENU&lt;/center&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(152, 152, 152);
+	color: rgb(40, 40, 40);
+}QPushButton:pressed{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(81, 81, 81);
+	color: rgb(211, 211, 211);
+}</string>
+       </property>
+       <property name="text">
+        <string>Payement</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(152, 152, 152);
+	color: rgb(40, 40, 40);
+}QPushButton:pressed{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(81, 81, 81);
+	color: rgb(211, 211, 211);
+}</string>
+       </property>
+       <property name="text">
+        <string>Suivi financier</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(152, 152, 152);
+	color: rgb(40, 40, 40);
+}QPushButton:pressed{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(81, 81, 81);
+	color: rgb(211, 211, 211);
+}</string>
+       </property>
+       <property name="text">
+        <string>Utilisateur</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(152, 152, 152);
+	color: rgb(40, 40, 40);
+}QPushButton:pressed{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(81, 81, 81);
+	color: rgb(211, 211, 211);
+}</string>
+       </property>
+       <property name="text">
+        <string>Echelonnement</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(152, 152, 152);
+	color: rgb(40, 40, 40);
+}QPushButton:pressed{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(81, 81, 81);
+	color: rgb(211, 211, 211);
+}</string>
+       </property>
+       <property name="text">
+        <string>Historique</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="financeBtn">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(152, 152, 152);
+	color: rgb(40, 40, 40);
+}QPushButton:pressed{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(81, 81, 81);
+	color: rgb(211, 211, 211);
+}</string>
+       </property>
+       <property name="text">
+        <string>Situation financiere</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="leave">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(235, 0, 0);
+	color: black;
+}
+QpushButton:pressed{
+	background-color: rgb(182, 7, 7);
+}</string>
+       </property>
+       <property name="text">
+        <string>Quitter</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
