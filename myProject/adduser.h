@@ -48,36 +48,30 @@ public:
     QString userNiv{""};
 
     //Fonction pour enregitrer les actions dans la base de donnee historique
-    QSqlQuery q;
-
-    void addHisto(QString action)
+    //Creation de fonctions pour enregistrer les actions dans l'historique
+    void addHistorique(QString action)
     {
-        //Obtention des informations sur l'utilisateur courent
-        QString userId{""},userName{""};
-        openDB("C:/Users/micka/Desktop/Databases_projet_fin_annee/login.sqlite");
-        q.prepare("SELECT u.[userId], u.[nom] FROM [user] u INNER JOIN [current_user] cu ON u.[userId] = cu.[userId];");
-        if(q.exec())
+        QSqlQuery q;
+        QString responsable{""};
+        if(q.exec("SELECT [pseudo receptioniste] FROM [receptionistes] WHERE [active] = 1 ;"))
         {
             while(q.next())
             {
-                userId = q.value(0).toString();
-                userName = q.value(1).toString();
+                responsable = q.value(0).toString();
             }
-            qDebug()<<"User ID : "<<userId<<"\tUser Name : "<<userName;
+            if(q.exec("INSERT INTO [historique] ([date action],[heure action],[responsable],[action]) VALUES (date('now'),time('now'),\""+responsable+"\",\""+action+"\");"))
+            {
+                qDebug()<<"Enregistrement action reussit";
+            }
+            else
+            {
+                qDebug()<<"Enregistrement action error";
+            }
         }
-        closeDB();
-
-
-        //Insertion dans l'historique
-
-        openDB("C:/Users/micka/Desktop/Databases_projet_fin_annee/historique.sqlite");
-        if(!q.exec("INSERT INTO [historique] ([date],[heure],[userId],[userNom],[action]) VALUES (date('now'),time('now'),"+userId+",'"+userName+"','"+action+"');"))
-        {
-            qDebug()<<"Enregistrement ERROR"<<q.lastError().text();
-        }
-        closeDB();
-
+        else
+            qDebug()<<"Failled to get receptioniste name";
     }
+
 
 public:
     explicit adduser(QWidget *parent = nullptr);

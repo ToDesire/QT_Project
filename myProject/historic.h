@@ -44,12 +44,16 @@ public:
     }
 
 
+
+
 public:
     explicit historic(QWidget *parent = nullptr);
     ~historic();
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_visionner_btn_clicked();
 
 private:
     Ui::historic *ui;

@@ -40,7 +40,7 @@ void reinscription::on_ajouter_clicked()
 
 void reinscription::on_Afficher_clicked()
 {
-    openDB("/run/media/to/784CF7C94CF78064/Projet/Projet-QT-master/Database/projetest.sqlite");
+    openDB("/run/media/to/784CF7C94CF78064/Projet/Projet-QT-master/Database//projetest.sqlite");
     //QSqlQuery qry;
 
     //To make a query , we'll use

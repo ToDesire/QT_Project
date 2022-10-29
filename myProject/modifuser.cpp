@@ -23,6 +23,8 @@ void modifuser::on_pushButton_clicked()
     if(!qry.exec())
     {
         qDebug()<<"ERROR SQL : "<<qry.lastError().text();
+        closeDB();
+        return;
     }
     else
     {
@@ -41,7 +43,11 @@ void modifuser::on_pushButton_clicked()
                 if(!qry.exec())
                 {
                     qDebug()<<"ERROR SQL : "<<qry.lastError().text();
+                    closeDB();
+                    return;
                 }
+                QString modifUserAction = "Modification du niveau d'acces de l'utilisateur "+ nom + " "+prenom;
+                addHistorique(modifUserAction);
             }
         }
         else

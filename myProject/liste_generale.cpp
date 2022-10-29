@@ -10,7 +10,7 @@ liste_generale::liste_generale(QWidget *parent) :
     ui->setupUi(this);
 //    setFixedSize(989,618);
 
-    ui->L1->setEnabled(0);ui->L2->setEnabled(0);ui->L3->setEnabled(0);ui->M1->setEnabled(0);ui->M2->setEnabled(0);
+    ui->L1->setEnabled(0);ui->L2->setEnabled(0);ui->L3->setEnabled(0);ui->M1->setEnabled(0);ui->M2->setEnabled(0);ui->D1->setEnabled(0);
     ui->paye->setEnabled(0);ui->partiel->setEnabled(0);ui->non_paye->setEnabled(0);
 
 }
@@ -28,7 +28,7 @@ void liste_generale::on_logout_clicked()
 void liste_generale::on_view_clicked()
 {
     /*--------Opening the DB and DB for the student---------*/
-    openDB("E:/Web/Back-end/SQL/sqlite/prog2/etudiant.sqlite");
+    openDB("/run/media/to/784CF7C94CF78064/Projet/Projet-QT-master/Database/projetest.sqlite");
 
     //Composant of the request
     QString categories{""},filtreNiveau{""},filtrePayement{""};
@@ -45,13 +45,14 @@ void liste_generale::on_view_clicked()
         /*************************DEBUT**********************************/
 
         /******************FILTRE SELON LE NIVEAU*******************/
-                if(ui->L1->checkState() && ui->L2->checkState() && ui->L3->checkState() && ui->M1->checkState() && ui->M2->checkState())
+                if(ui->L1->checkState() && ui->L2->checkState() && ui->L3->checkState() && ui->M1->checkState() && ui->M2->checkState() && ui->D1->checkState())
                 {
                     filtreNiveau = "1";
                 }
-                else if(!ui->L1->checkState() && !ui->L2->checkState() && !ui->L3->checkState() && !ui->M1->checkState() && !ui->M2->checkState())
+                else if(!ui->L1->checkState() && !ui->L2->checkState() && !ui->L3->checkState() && !ui->M1->checkState() && !ui->M2->checkState() && !ui->D1->checkState())
                 {
                     QMessageBox::information(this,"ERROR","You must choose a level!!");
+                    closeDB();
                     return;
                 }
                 else
@@ -60,31 +61,37 @@ void liste_generale::on_view_clicked()
                     {
                         if(filtreNiveau != "")
                             filtreNiveau += "OR";
-                        filtreNiveau += " [niveau] = 'L1' ";
+                        filtreNiveau += " [niveau] = 'Licence 1' ";
                     }
                     if(ui->L2->checkState())
                     {
                         if(filtreNiveau != "")
                             filtreNiveau += "OR";
-                        filtreNiveau += " [niveau] = 'L2' ";
+                        filtreNiveau += " [niveau] = 'Licence 2' ";
                     }
                     if(ui->L3->checkState())
                     {
                         if(filtreNiveau != "")
                             filtreNiveau += "OR";
-                        filtreNiveau += " [niveau] = 'L3' ";
+                        filtreNiveau += " [niveau] = 'Licence 3' ";
                     }
                     if(ui->M1->checkState())
                     {
                         if(filtreNiveau != "")
                             filtreNiveau += "OR";
-                        filtreNiveau += " [niveau] = 'M1' ";
+                        filtreNiveau += " [niveau] = 'Master 1' ";
                     }
                     if(ui->M2->checkState())
                     {
                         if(filtreNiveau != "")
                             filtreNiveau += "OR";
-                        filtreNiveau += " [niveau] = 'M2' ";
+                        filtreNiveau += " [niveau] = 'Master 2' ";
+                    }
+                    if(ui->D1->checkState())
+                    {
+                        if(filtreNiveau != "")
+                            filtreNiveau += "OR";
+                        filtreNiveau += " [niveau] = 'Doctorant 1' ";
                     }
                 }
 
@@ -102,25 +109,25 @@ void liste_generale::on_view_clicked()
                     if(ui->non_paye->checkState())
                     {
                         if(filtrePayement != "")
-                            filtrePayement += "OR";
-                        filtrePayement += " [st_fin] = 'PN'";
+                            filtrePayement += " OR ";
+                        filtrePayement += " [Montant payer] IS NULL";
                     }
                     if(ui->paye->checkState())
                     {
                         if(filtrePayement != "")
-                            filtrePayement += "OR";
-                        filtrePayement += " [st_fin] = 'PT'";
+                            filtrePayement += " OR ";
+                        filtrePayement += " [Montant payer] = 422000";
                     }
                     if(ui->partiel->checkState())
                     {
                         if(filtrePayement != "")
-                            filtrePayement += "OR";
-                        filtrePayement += " [st_fin] = 'PP'";
+                            filtrePayement += " OR ";
+                        filtrePayement += " [Montant payer] < 422000";
                     }
                 }
 
                 //POUR FAIRE LA REQUETE
-                qry->prepare("SELECT * FROM [etudiant] WHERE ("+ filtreNiveau+") AND ("+ filtrePayement +");");
+                qry->prepare("SELECT e.[identifiant],e.[nom],e.[prenom],e.[niveau],SUM(v.[montant]) AS 'Montant payer' FROM [etudiantest] e LEFT JOIN [versements] v ON v.[IdEtudiant] = e.[IdEtudiant] WHERE ("+filtreNiveau+") GROUP BY e.[IdEtudiant]  HAVING ("+filtrePayement+");");
 
 
                 //VERIFICATION QU'IL N'Y A PAS D'ERREUR DANS LA REQUETE
@@ -150,47 +157,49 @@ void liste_generale::on_view_clicked()
 void liste_generale::on_radioButton_listGen_clicked()
 {
     //initialisation Niveau
-    ui->L1->setChecked(0);ui->L2->setChecked(0);ui->L3->setChecked(0);ui->M1->setChecked(0);ui->M2->setChecked(0);
+    ui->L1->setChecked(0);ui->L2->setChecked(0);ui->L3->setChecked(0);ui->M1->setChecked(0);ui->M2->setChecked(0);ui->D1->setChecked(0);
     //initialisation payement
     ui->paye->setEnabled(1);ui->partiel->setEnabled(1);ui->non_paye->setEnabled(1);
 
     //L1 admis et redoublant
-    ui->L1->setEnabled(1);ui->L2->setEnabled(1);ui->L3->setEnabled(1);ui->M1->setEnabled(1);ui->M2->setEnabled(1);
+    ui->L1->setEnabled(1);ui->L2->setEnabled(1);ui->L3->setEnabled(1);ui->M1->setEnabled(1);ui->M2->setEnabled(1);ui->D1->setEnabled(1);
 }
 
 void liste_generale::on_radioButton_inscription_clicked()
 {
     //initialisation
-    ui->L1->setChecked(0);ui->L2->setChecked(0);ui->L3->setChecked(0);ui->M1->setChecked(0);ui->M2->setChecked(0);
+    ui->L1->setChecked(1);ui->L2->setChecked(0);ui->L3->setChecked(0);ui->M1->setChecked(0);ui->M2->setChecked(0);
     //initialisation payement
     ui->paye->setEnabled(1);ui->partiel->setEnabled(1);ui->non_paye->setEnabled(1);
 
-    ui->L1->setEnabled(1);
+    ui->L1->setEnabled(0);
     ui->L2->setEnabled(0);ui->L3->setEnabled(0);ui->M1->setEnabled(0);ui->M2->setEnabled(0);
 }
 
 void liste_generale::on_radioButton_reinscription_clicked()
 {
     //initialisation
-    ui->L1->setChecked(0);ui->L2->setChecked(0);ui->L3->setChecked(0);ui->M1->setChecked(0);ui->M2->setChecked(0);
+    ui->L1->setChecked(0);ui->L2->setChecked(0);ui->L3->setChecked(0);ui->M1->setChecked(0);ui->M2->setChecked(0);ui->D1->setChecked(0);
     //initialisation payement
     ui->paye->setEnabled(1);ui->partiel->setEnabled(1);ui->non_paye->setEnabled(1);
 
     //L1 redoublant
-    ui->L1->setEnabled(1);ui->L2->setEnabled(1);ui->L3->setEnabled(1);ui->M1->setEnabled(1);ui->M2->setEnabled(1);
+    ui->L1->setEnabled(1);ui->L2->setEnabled(1);ui->L3->setEnabled(1);ui->M1->setEnabled(1);ui->M2->setEnabled(1);ui->D1->setEnabled(1);
 }
 
-//Enregistrement de la VIEW en fichier excel
+
+
+//Enregistrement de la VIEW en fichier txt
 void liste_generale::on_save_clicked()
 {
     QString fileName{""};
     fileName = ui->filename->text();
     if(fileName=="")
         fileName = "document";
-    openDB("E:/Web/Back-end/SQL/sqlite/prog2/etudiant.sqlite");
+        openDB("C:/Users/micka/Desktop/Databases_projet_fin_annee/Database/projetest.sqlite");
     QSqlQuery qry;
     //Recuperation des filtres, ici les filtres sont des attribut le notre fenetre(Voir liste_generale.h)
-    qry.prepare("SELECT * FROM [etudiant] WHERE ("+ qryNiv +") AND ("+ qryPay +");");
+    qry.prepare("SELECT e.[identifiant],e.[nom],e.[prenom],e.[niveau],SUM(v.[montant]) AS 'Montant payer' FROM [etudiantest] e LEFT JOIN [versements] v ON v.[IdEtudiant] = e.[IdEtudiant] WHERE ("+qryNiv+") GROUP BY e.[IdEtudiant]  HAVING ("+qryPay+");");
 
     if(qry.exec())
     {

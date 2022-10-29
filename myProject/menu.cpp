@@ -36,7 +36,7 @@ void menu::on_financeBtn_clicked()
 
 void menu::on_pushButton_3_clicked()
 {
-    openDB("/run/media/to/784CF7C94CF78064/Projet/Projet-QT-master/Database/projetest.sqlite");
+    openDB("/run/media/to/784CF7C94CF78064/Projet/Projet-QT-master/Database//projetest.sqlite");
     QSqlQuery qry;
     int userNiv{0};
     //Verification que l'utilisateur a acces a cette fenetre

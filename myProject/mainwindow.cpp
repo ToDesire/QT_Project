@@ -9,7 +9,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-//    setFixedSize(556,345);
 
     ui->groupBox->setGeometry(this->width()/2,this->height()/3,this->width()/2,this->height()/3);
     ui->label_pic->setGeometry(0,this->height()/3,this->width()/2,this->height()/3);

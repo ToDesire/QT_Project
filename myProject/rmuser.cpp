@@ -25,6 +25,8 @@ void rmuser::on_pushButton_clicked()
     if(!qry.exec())
     {
         qDebug()<<"ERROR SQL : "<<qry.lastError().text();
+        closeDB();
+        return;
     }
     else
     {
@@ -43,7 +45,11 @@ void rmuser::on_pushButton_clicked()
                 if(!qry.exec())
                 {
                     qDebug()<<"ERROR SQL : "<<qry.lastError().text();
+                    closeDB();
+                    return;
                 }
+                QString rmUserAction = "Suppression de l'utilisateur "+nom+" "+prenom;
+                addHistorique(rmUserAction);
             }
         }
         else

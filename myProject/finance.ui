@@ -11,30 +11,30 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Finance</string>
+   <string>Situation financiere</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="2">
-    <spacer name="verticalSpacer_2">
+    <spacer name="verticalSpacer_3">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>20</width>
-       <height>19</height>
+       <width>13</width>
+       <height>23</height>
       </size>
      </property>
     </spacer>
    </item>
    <item row="1" column="0">
-    <spacer name="horizontalSpacer">
+    <spacer name="horizontalSpacer_3">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>92</width>
+       <width>99</width>
        <height>20</height>
       </size>
      </property>
@@ -67,9 +67,11 @@
      </property>
      <property name="styleSheet">
       <string notr="true">QTableWidget{
+	border: 2px solid rgb(85, 85, 127);
 	background-color: #fff;
-	color: #000;
-}</string>
+	color: black;
+}
+</string>
      </property>
      <property name="selectionMode">
       <enum>QAbstractItemView::NoSelection</enum>
@@ -152,13 +154,13 @@
     </widget>
    </item>
    <item row="1" column="4">
-    <spacer name="horizontalSpacer_2">
+    <spacer name="horizontalSpacer_4">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>92</width>
+       <width>73</width>
        <height>20</height>
       </size>
      </property>
@@ -169,22 +171,25 @@
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>18</height>
+       <height>20</height>
       </size>
      </property>
     </spacer>
    </item>
    <item row="3" column="0" colspan="2">
-    <spacer name="horizontalSpacer_3">
+    <spacer name="horizontalSpacer">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>221</width>
+       <width>228</width>
        <height>20</height>
       </size>
      </property>
@@ -210,27 +215,27 @@ QpushButton:pressed{
     </widget>
    </item>
    <item row="3" column="3" colspan="2">
-    <spacer name="horizontalSpacer_4">
+    <spacer name="horizontalSpacer_2">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>221</width>
+       <width>127</width>
        <height>20</height>
       </size>
      </property>
     </spacer>
    </item>
    <item row="4" column="2">
-    <spacer name="verticalSpacer_3">
+    <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>19</height>
+       <height>13</height>
       </size>
      </property>
     </spacer>

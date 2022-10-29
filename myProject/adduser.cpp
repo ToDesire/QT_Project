@@ -42,32 +42,14 @@ void adduser::on_pushButton_clicked()
     if(!qry.exec())
     {
         qDebug()<<qry.lastError().text();
+        closeDB();
+        return;
     }
-
-    //closeDB();
-
+    QString addUserAction = "Ajout de l'utilisateur " + pseudo;
     //Enregistrement de l'action dans l'historique
-    QString action = "Ajout de l'utilisateur " + nom;
-    QString userId{""},userName{""};
-    //openDB("C:/Users/micka/Desktop/Databases_projet_fin_annee/login.sqlite");
-    /*
-    qry.prepare("SELECT u.[userId], u.[nom] FROM [user] u INNER JOIN [current_user] cu ON u.[userId] = cu.[userId];");
-    if(qry.exec())
-    {
-        while(qry.next())
-        {
-            userId = qry.value(0).toString();
-            userName = qry.value(1).toString();
-        }
-        qDebug()<<"User ID : "<<userId<<"\tUser Name : "<<userName;
-    }
-    else
-        qDebug()<<"Enregistremen ao no erreur "<<qry.lastError().text();
-    */
+    addHistorique(addUserAction);
+
     closeDB();
-
-    //addHisto(action);
-
     hide();
 }
 

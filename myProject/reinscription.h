@@ -48,6 +48,8 @@ public:
     }
 
 
+
+
 public:
     explicit reinscription(QWidget *parent = nullptr);
     ~reinscription();

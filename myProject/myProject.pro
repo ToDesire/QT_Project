@@ -26,8 +26,6 @@ CONFIG += c++11
 
 SOURCES += \
         adduser.cpp \
-        ajout_bord.cpp \
-        ajout_echel.cpp \
         dialog.cpp \
         finance.cpp \
         historic.cpp \
@@ -42,8 +40,6 @@ SOURCES += \
 
 HEADERS += \
         adduser.h \
-        ajout_bord.h \
-        ajout_echel.h \
         dialog.h \
         finance.h \
         historic.h \
@@ -57,8 +53,6 @@ HEADERS += \
 
 FORMS += \
         adduser.ui \
-        ajout_bord.ui \
-        ajout_echel.ui \
         dialog.ui \
         finance.ui \
         historic.ui \
