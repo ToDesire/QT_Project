@@ -6,7 +6,7 @@ reinscription::reinscription(QWidget *parent) :
     ui(new Ui::reinscription)
 {
     ui->setupUi(this);
-//    setFixedSize(711,495);
+    this->showFullScreen();
 
 }
 

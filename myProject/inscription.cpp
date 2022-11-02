@@ -6,7 +6,7 @@ inscription::inscription(QWidget *parent) :
     ui(new Ui::inscription)
 {
     ui->setupUi(this);
-//    setFixedSize(989,618);
+    this->showFullScreen();
 
     ui->vers_inp_montant->setEnabled(0);
     ui->vers_inp_borderau->setEnabled(0);

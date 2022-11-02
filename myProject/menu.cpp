@@ -10,8 +10,7 @@ menu::menu(QWidget *parent) :
     ui(new Ui::menu)
 {
     ui->setupUi(this);
-//    setFixedSize(556,345);
-
+    this->showFullScreen();
 
 }
 

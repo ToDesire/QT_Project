@@ -8,7 +8,7 @@ liste_generale::liste_generale(QWidget *parent) :
     ui(new Ui::liste_generale)
 {
     ui->setupUi(this);
-//    setFixedSize(989,618);
+    this->showFullScreen();
 
     ui->L1->setEnabled(0);ui->L2->setEnabled(0);ui->L3->setEnabled(0);ui->M1->setEnabled(0);ui->M2->setEnabled(0);ui->D1->setEnabled(0);
     ui->paye->setEnabled(0);ui->partiel->setEnabled(0);ui->non_paye->setEnabled(0);

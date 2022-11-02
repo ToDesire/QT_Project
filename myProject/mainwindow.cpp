@@ -45,7 +45,7 @@ void MainWindow::on_pushButton_clicked()
             }
             if(i==1)
             {
-                hide();
+                close();
                 myMenu = new menu(this);
                 myMenu->show();
 

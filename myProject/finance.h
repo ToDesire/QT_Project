@@ -2,6 +2,10 @@
 #define FINANCE_H
 
 #include <QDialog>
+#include <QtCharts>
+#include <QChartView>
+#include <QPieSeries>
+#include <QPieSlice>
 
 namespace Ui {
 class finance;

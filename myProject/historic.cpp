@@ -6,7 +6,7 @@ historic::historic(QWidget *parent) :
     ui(new Ui::historic)
 {
     ui->setupUi(this);
-//    setFixedSize(989,618);
+    this->showFullScreen();
 
     //Affichage de l'historique
     //To make a query , we'll use
