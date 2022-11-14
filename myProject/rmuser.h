@@ -17,6 +17,7 @@ class rmuser : public QDialog
 
 public:
     //Creation de fonctions pour ouvrir et fermer les bases de donnees utilisees
+
     QSqlDatabase db;
 
     void closeDB()
@@ -27,8 +28,10 @@ public:
 
     bool openDB(QString PATH)
     {
+        //Driver permettant utiliser SQLite
         db = QSqlDatabase::addDatabase("QSQLITE");
 
+        //PATH contient le chemin vers notre base de donnees
         db.setDatabaseName(PATH);
         db.open();
         if(!db.isOpen())
@@ -43,7 +46,6 @@ public:
         }
     }
 
-    //Fonction pour enregitrer les actions dans la base de donnee historique
     //Creation de fonctions pour enregistrer les actions dans l'historique
     void addHistorique(QString action)
     {
@@ -55,7 +57,7 @@ public:
             {
                 responsable = q.value(0).toString();
             }
-            if(q.exec("INSERT INTO [historique] ([date action],[heure action],[responsable],[action]) VALUES (date('now'),time('now'),\""+responsable+"\",\""+action+"\");"))
+            if(q.exec("INSERT INTO [historiques] ([date action],[heure action],[responsable],[action]) VALUES (date('now'),time('now'),\""+responsable+"\",\""+action+"\");"))
             {
                 qDebug()<<"Enregistrement action reussit";
             }

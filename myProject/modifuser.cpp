@@ -15,10 +15,37 @@ modifuser::~modifuser()
 
 void modifuser::on_pushButton_clicked()
 {
+    //Ouverture de la base de donnees
+    QString dir = QApplication::applicationDirPath();
+
+    QStringList dirs = dir.split('/');
+    QStringList new_dirs;
+    for(int i = 0; i<dirs.size()-1; i++){
+        new_dirs.append(dirs[i]);
+    }
+    QString new_dir = new_dirs.join('/');
+
+    if(!openDB(new_dir+"/run/media/to/784CF7C94CF78064/Last update/Projet-QT-master/Database/projetest.sqlite")){
+        int ind = dirs.indexOf("build-myProject-Desktop-Debug");
+        new_dirs.clear();
+        qDebug()<< "ind : "<<ind;
+        for(int i = 0 ; i < ind-1; i++ )
+        {
+            new_dirs.append(dirs[i]);
+        }
+
+        new_dir = new_dirs.join('/');
+
+        openDB(new_dir+"/run/media/to/784CF7C94CF78064/Last update/Projet-QT-master/Database/projetest.sqlite");
+    }
+
+    /********************************************/
+
+    QSqlQuery qry;
+
     QString id = ui->inp_ID->text();
     QString nom{""},prenom{""},niveau{userNiv};
-    openDB("/run/media/to/784CF7C94CF78064/Projet/Projet-QT-master/Database/projetest.sqlite");
-    QSqlQuery qry;
+
     qry.prepare("SELECT [nom receptioniste],[prenom receptioniste] FROM [receptionistes] WHERE [IdReceptioniste] = "+ id +";");
     if(!qry.exec())
     {
@@ -59,7 +86,7 @@ void modifuser::on_pushButton_clicked()
     hide();
 }
 
-void modifuser::on_Admin_clicked()
+void modifuser::on_Admin_clicked()//utilisateur simple
 {
     userNiv = "0";
 }

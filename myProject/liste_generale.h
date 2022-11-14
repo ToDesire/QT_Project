@@ -17,6 +17,7 @@ class liste_generale : public QDialog
 
 public:
     //Creation de fonctions pour ouvrir et fermer les bases de donnees utilisees
+
     QSqlDatabase db;
 
     void closeDB()
@@ -27,8 +28,10 @@ public:
 
     bool openDB(QString PATH)
     {
+        //Driver permettant utiliser SQLite
         db = QSqlDatabase::addDatabase("QSQLITE");
 
+        //PATH contient le chemin vers notre base de donnees
         db.setDatabaseName(PATH);
         db.open();
         if(!db.isOpen())
@@ -42,8 +45,8 @@ public:
             return true;
         }
     }
-    //Creation de fonction pour recuperer la valeur des filtres et des requetes
-    //Composant of the request
+    //Creation de fonction pour affecter les valeurs des filtres et des requetes
+    //Composants de la requete
     QString qryNiv{""},qryPay{""};
 
     void setFiltre(QString valueNiv,QString valuePaye)

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>523</width>
-    <height>523</height>
+    <width>757</width>
+    <height>623</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,168 @@
   <property name="styleSheet">
    <string notr="true">QDialog{
 	background-image: url(:/img/img/hero-background-15.jpg);
+
 }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="1">
+   <item row="0" column="2">
+    <spacer name="verticalSpacer_4">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>39</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="2">
+    <widget class="QLabel" name="label">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+	font: 81 15pt &quot;Fira Sans Compressed ExtraBold&quot;;
+	font-style: italic;
+}</string>
+     </property>
+     <property name="text">
+      <string>MENU</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <spacer name="horizontalSpacer_5">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>154</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="1" colspan="3">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	background-color: rgba(225,225,225,0);
+	image: url(:/img/img/sqldeveloper.png);
+	border:0px grey;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>150</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="parametre">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(255, 255, 255, 0);
+border:transparent;
+image: url(:/img/img/gnome-control-center.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>150</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_6">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	image: url(:/img/img/cs-user.png);
+	background-color: rgba(255,255,255,0);
+	border-color: rgba(255, 255, 255, 0);
+	border-bottom-color: rgba(255, 255, 255, 0);
+	border:0px grey;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="4">
+    <spacer name="horizontalSpacer_6">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>154</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="2">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -27,12 +185,12 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>22</height>
+       <height>40</height>
       </size>
      </property>
     </spacer>
    </item>
-   <item row="1" column="0">
+   <item row="4" column="0" colspan="2">
     <spacer name="horizontalSpacer">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -45,36 +203,8 @@
      </property>
     </spacer>
    </item>
-   <item row="1" column="1">
+   <item row="4" column="2">
     <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QLabel{
-	font: 81 15pt &quot;Fira Sans Compressed ExtraBold&quot;;
-	font-style: italic;
-}</string>
-       </property>
-       <property name="text">
-        <string>MENU</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
      <item>
       <widget class="QPushButton" name="pushButton">
        <property name="minimumSize">
@@ -84,6 +214,12 @@
         </size>
        </property>
        <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="sizeIncrement">
         <size>
          <width>250</width>
          <height>50</height>
@@ -124,6 +260,12 @@
          <height>50</height>
         </size>
        </property>
+       <property name="sizeIncrement">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
        <property name="cursor">
         <cursorShape>PointingHandCursor</cursorShape>
        </property>
@@ -154,6 +296,12 @@
         </size>
        </property>
        <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="sizeIncrement">
         <size>
          <width>250</width>
          <height>50</height>
@@ -194,6 +342,12 @@
          <height>50</height>
         </size>
        </property>
+       <property name="sizeIncrement">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton{
 	font: 75 italic 12pt &quot;Fira Sans&quot;;
@@ -208,7 +362,7 @@
 }</string>
        </property>
        <property name="text">
-        <string>Echellonnement</string>
+        <string>Echelonnement</string>
        </property>
       </widget>
      </item>
@@ -221,6 +375,12 @@
         </size>
        </property>
        <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="sizeIncrement">
         <size>
          <width>250</width>
          <height>50</height>
@@ -253,6 +413,12 @@
         </size>
        </property>
        <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="sizeIncrement">
         <size>
          <width>250</width>
          <height>50</height>
@@ -293,6 +459,12 @@
          <height>50</height>
         </size>
        </property>
+       <property name="sizeIncrement">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
        <property name="cursor">
         <cursorShape>PointingHandCursor</cursorShape>
        </property>
@@ -314,7 +486,7 @@ QpushButton:pressed{
      </item>
     </layout>
    </item>
-   <item row="1" column="2">
+   <item row="4" column="3" colspan="2">
     <spacer name="horizontalSpacer_2">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -327,7 +499,7 @@ QpushButton:pressed{
      </property>
     </spacer>
    </item>
-   <item row="2" column="1">
+   <item row="5" column="2">
     <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>

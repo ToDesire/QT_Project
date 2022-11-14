@@ -17,6 +17,7 @@ class historic : public QDialog
 
 public:
     //Creation de fonctions pour ouvrir et fermer les bases de donnees utilisees
+
     QSqlDatabase db;
 
     void closeDB()
@@ -27,8 +28,10 @@ public:
 
     bool openDB(QString PATH)
     {
+        //Driver permettant utiliser SQLite
         db = QSqlDatabase::addDatabase("QSQLITE");
 
+        //PATH contient le chemin vers notre base de donnees
         db.setDatabaseName(PATH);
         db.open();
         if(!db.isOpen())

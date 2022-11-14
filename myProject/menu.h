@@ -8,11 +8,13 @@
 #include <QMessageBox>
 
 #include "finance.h"
-#include "reinscription.h"
-#include "inscription.h"
+#include "utilisateurs.h"
+#include "payement.h"
 #include "liste_generale.h"
-#include "dialog.h"
+#include "echelonnement.h"
 #include "historic.h"
+#include "wprofil.h"
+#include "parametre.h"
 
 namespace Ui {
 class menu;
@@ -24,6 +26,7 @@ class menu : public QDialog
 
 public:
     //Creation de fonctions pour ouvrir et fermer les bases de donnees utilisees
+
     QSqlDatabase db;
 
     void closeDB()
@@ -34,8 +37,10 @@ public:
 
     bool openDB(QString PATH)
     {
+        //Driver permettant utiliser SQLite
         db = QSqlDatabase::addDatabase("QSQLITE");
 
+        //PATH contient le chemin vers notre base de donnees
         db.setDatabaseName(PATH);
         db.open();
         if(!db.isOpen())
@@ -49,7 +54,6 @@ public:
             return true;
         }
     }
-
 public:
     explicit menu(QWidget *parent = nullptr);
     ~menu();
@@ -69,14 +73,22 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_7_clicked();
+
+    void on_parametre_clicked();
+
 private:
     Ui::menu *ui;
     finance *myFinance;
-    reinscription *reinsc_tab;
-    inscription *insc_tab;
+    utilisateurs *users;
+    inscription *paye;
     liste_generale *fenListeGen;
     Dialog *echel;
     historic *winHist;
+    wprofil *user;
+    parametre *paramWin;
 };
 
 #endif // MENU_H

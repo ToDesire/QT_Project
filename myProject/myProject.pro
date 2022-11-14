@@ -6,6 +6,7 @@
 
 QT       += core gui sql
 QT       += core gui charts
+QT += charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -27,43 +28,52 @@ CONFIG += c++11
 
 SOURCES += \
         adduser.cpp \
-        dialog.cpp \
+        ch_pass.cpp \
+        echelonnement.cpp \
         finance.cpp \
         historic.cpp \
-        inscription.cpp \
         liste_generale.cpp \
         main.cpp \
         mainwindow.cpp \
         menu.cpp \
         modifuser.cpp \
-        reinscription.cpp \
-        rmuser.cpp
+        parametre.cpp \
+        payement.cpp \
+        rmuser.cpp \
+        utilisateurs.cpp \
+        wprofil.cpp
 
 HEADERS += \
         adduser.h \
-        dialog.h \
+        ch_pass.h \
+        echelonnement.h \
         finance.h \
         historic.h \
-        inscription.h \
         liste_generale.h \
         mainwindow.h \
         menu.h \
         modifuser.h \
-        reinscription.h \
-        rmuser.h
+        parametre.h \
+        payement.h \
+        rmuser.h \
+        utilisateurs.h \
+        wprofil.h
 
 FORMS += \
         adduser.ui \
-        dialog.ui \
+        ch_pass.ui \
+        echelonnement.ui \
         finance.ui \
         historic.ui \
-        inscription.ui \
         liste_generale.ui \
         mainwindow.ui \
         menu.ui \
         modifuser.ui \
-        reinscription.ui \
-        rmuser.ui
+        parametre.ui \
+        payement.ui \
+        rmuser.ui \
+        utilisateurs.ui \
+        wprofil.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -72,3 +82,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     assets.qrc
+
+DISTFILES +=

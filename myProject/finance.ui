@@ -29,42 +29,8 @@
    <string notr="true"/>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="3" column="2">
-    <widget class="QPushButton" name="retour">
-     <property name="minimumSize">
-      <size>
-       <width>80</width>
-       <height>35</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>80</width>
-       <height>35</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton{
-	height: 25px;
-	font: 81 Italic 12pt &quot;Fira Sans Compressed ExtraBold&quot;;
-	color: black;
-	background-color: red;
-	position: absolute;
-	top: 10px;
-	right: 50px;
-}
-
-QpushButton:pressed{
-	background-color: rgb(182, 7, 7);
-}</string>
-     </property>
-     <property name="text">
-      <string>Retour</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="2">
-    <spacer name="verticalSpacer_2">
+   <item row="0" column="4">
+    <spacer name="verticalSpacer_3">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
@@ -72,6 +38,43 @@ QpushButton:pressed{
       <size>
        <width>20</width>
        <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="0">
+    <spacer name="horizontalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="1" colspan="4">
+    <widget class="QFrame" name="verticalFrame">
+     <property name="minimumSize">
+      <size>
+       <width>665</width>
+       <height>550</height>
+      </size>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout"/>
+    </widget>
+   </item>
+   <item row="1" column="5">
+    <spacer name="horizontalSpacer_4">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
       </size>
      </property>
     </spacer>
@@ -92,32 +95,6 @@ QpushButton:pressed{
      </property>
     </spacer>
    </item>
-   <item row="1" column="4">
-    <spacer name="horizontalSpacer_4">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="1" column="0">
-    <spacer name="horizontalSpacer_3">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
    <item row="3" column="0" colspan="2">
     <spacer name="horizontalSpacer">
      <property name="orientation">
@@ -131,7 +108,86 @@ QpushButton:pressed{
      </property>
     </spacer>
    </item>
-   <item row="3" column="3" colspan="2">
+   <item row="3" column="2" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="view">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	height: 25px;
+	font: 81 11pt &quot;Fira Sans Compressed ExtraBold&quot;;
+}</string>
+       </property>
+       <property name="text">
+        <string>Visionner</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="retour">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	height: 25px;
+	font: 81 Italic 12pt &quot;Fira Sans Compressed ExtraBold&quot;;
+	color: black;
+	background-color: red;
+	position: absolute;
+	top: 10px;
+	right: 50px;
+}
+
+QpushButton:pressed{
+	background-color: rgb(182, 7, 7);
+}</string>
+       </property>
+       <property name="text">
+        <string>Retour</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="4" colspan="2">
     <spacer name="horizontalSpacer_2">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -144,19 +200,8 @@ QpushButton:pressed{
      </property>
     </spacer>
    </item>
-   <item row="1" column="1" colspan="3">
-    <widget class="QFrame" name="verticalFrame">
-     <property name="minimumSize">
-      <size>
-       <width>665</width>
-       <height>550</height>
-      </size>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout"/>
-    </widget>
-   </item>
-   <item row="0" column="2">
-    <spacer name="verticalSpacer_3">
+   <item row="4" column="3">
+    <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>

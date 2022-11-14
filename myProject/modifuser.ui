@@ -121,7 +121,7 @@
          <item>
           <widget class="QRadioButton" name="Admin">
            <property name="text">
-            <string>Admin</string>
+            <string>Utilisateur</string>
            </property>
           </widget>
          </item>

@@ -6,6 +6,10 @@
 #include <QDebug>
 #include <QSqlDatabase>
 #include <QMessageBox>
+#include <QDir>
+//#include <filesystem>
+//#include <unistd.h>
+#include <unistd.h>
 
 #include "menu.h"
 
@@ -19,6 +23,7 @@ class MainWindow : public QMainWindow
 
 public:
     //Creation de fonctions pour ouvrir et fermer les bases de donnees utilisees
+
     QSqlDatabase db;
 
     void closeDB()
@@ -29,8 +34,10 @@ public:
 
     bool openDB(QString PATH)
     {
+        //Driver permettant utiliser SQLite
         db = QSqlDatabase::addDatabase("QSQLITE");
 
+        //PATH contient le chemin vers notre base de donnees
         db.setDatabaseName(PATH);
         db.open();
         if(!db.isOpen())
@@ -44,7 +51,6 @@ public:
             return true;
         }
     }
-
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
